@@ -1,3 +1,7 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <html>
 
 <head>
@@ -9,6 +13,21 @@
 	<hr>
 	
 	Welcome to the luv2code company home page!
+	
+	<p>
+	  User Name: <security:authentication property="principal.username" />
+	</p>
+	
+	<p>
+	  Role(s): <security:authentication property="principal.authorities" />
+	</p>
+	
+	<form:form action="${pageContext.request.contextPath}/logout"
+	           method="POST">
+	
+	    <input type="submit" value="Logout"/>
+	 
+	</form:form>
 
 </body>
 
