@@ -5,14 +5,25 @@
 <html>
 
 <head>
-	<title>luv2code Company Home Page</title>
+	<title>lin Company Home Page</title>
 </head>
 
 <body>
-	<h2>luv2code Company Home Page</h2>
+	<h2>lin Company Home Page</h2>
 	<hr>
 	
-	Welcome to the luv2code company home page!
+	Welcome to the lin company home page!
+	
+	<p>
+	   <a href="${pageContext.request.contextPath}/leaders"> LeaderShip Meeting </a>
+	   (Only for Manager peeps)
+	</p>
+	
+	<p>
+	   <a href="${pageContext.request.contextPath}/systems"> Systems Meeting </a>
+	   (Only for Admin peeps)
+	</p>
+	
 	
 	<p>
 	  User Name: <security:authentication property="principal.username" />
