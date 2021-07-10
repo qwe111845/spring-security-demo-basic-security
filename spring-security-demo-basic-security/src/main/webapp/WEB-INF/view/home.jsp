@@ -14,16 +14,20 @@
 	
 	Welcome to the lin company home page!
 	
+	<security:authorize access="hasRole('MANAGER')">
 	<p>
 	   <a href="${pageContext.request.contextPath}/leaders"> LeaderShip Meeting </a>
 	   (Only for Manager peeps)
 	</p>
+	</security:authorize>
+	
+    <security:authorize access="hasRole('ADMIN')">
 	
 	<p>
 	   <a href="${pageContext.request.contextPath}/systems"> Systems Meeting </a>
 	   (Only for Admin peeps)
 	</p>
-	
+	</security:authorize>
 	
 	<p>
 	  User Name: <security:authentication property="principal.username" />
